@@ -1,7 +1,15 @@
-class Solution:
-    def twoSum(self, nums, target):
-        for i in range(len(nums)):
-            newlist=nums[i+1:]
-            num2=target-nums[i]
-            if num2 in newlist:
-                return [i,newlist.index(num2)+i+1]
+nums = [2, 7, 11, 15]
+target = 9
+
+
+def twoSum(self, nums, target):
+    for i in range(len(nums)):
+        print("i is", i)
+        newlist = nums[i+1:]
+        num2 = target-nums[i]
+        if num2 in newlist:
+            print([i, newlist.index(num2) + i + 1])
+            return [i, newlist.index(num2) + i + 1]
+
+
+twoSum(twoSum, nums, target)
