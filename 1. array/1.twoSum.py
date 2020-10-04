@@ -1,15 +1,24 @@
-nums = [2, 7, 11, 15]
-target = 9
+# nums = [2, 7, 11, 15]
+# target = 9
 
 
-def twoSum(self, nums, target):
-    for i in range(len(nums)):
-        print("i is", i)
-        newlist = nums[i+1:]
-        num2 = target-nums[i]
-        if num2 in newlist:
-            print([i, newlist.index(num2) + i + 1])
-            return [i, newlist.index(num2) + i + 1]
+# def twoSum(self, nums, target):
+#     for i in range(len(nums)):
+#         print("i is", i)
+#         newlist = nums[i+1:]
+#         num2 = target-nums[i]
+#         if num2 in newlist:
+#             print([i, newlist.index(num2) + i + 1])
+#             return [i, newlist.index(num2) + i + 1]
 
 
-twoSum(twoSum, nums, target)
+# twoSum(twoSum, nums, target)
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        dic = {}
+        for i, num in enumerate(nums):
+            dic[num] = i
+        for i, num in enumerate(nums):
+            if target - num in dic and dic[target - num] != i:
+                return [i, dic[target - num]]
