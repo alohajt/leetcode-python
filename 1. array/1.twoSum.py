@@ -14,11 +14,12 @@
 
 # twoSum(twoSum, nums, target)
 
-class Solution(object):
+class Solution:
     def twoSum(self, nums, target):
-        dic = {}
+        pos = dict()
         for i, num in enumerate(nums):
-            dic[num] = i
-        for i, num in enumerate(nums):
-            if target - num in dic and dic[target - num] != i:
-                return [i, dic[target - num]]
+            if target - num in pos:
+                return [pos[target - num], i]
+            else:
+                pos[num] = i
+        return [0, 0]
