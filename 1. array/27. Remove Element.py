@@ -9,10 +9,10 @@ class Solution:
             return 0
 
         i = 0
-        while  i < len(nums):
+        while i < len(nums):
             if nums[i] == val:
                 nums.remove(nums[i])
             else:
                 i = i + 1
-        
+
         return len(nums)
